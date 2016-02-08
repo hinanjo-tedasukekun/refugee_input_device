@@ -59,7 +59,7 @@ void ReadRefugeeNum::doLoop() {
   if (devices_->reader_serial.available() > 0) {
     char c = devices_->reader_serial.read();
 
-    if (c == '\n') {
+    if (c == '\r') {
       app_->setRefugeeNum(ring_buffer_.toString());
       app_->finishReadRefugeeNum();
       return;
